@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<!-- <app-user></app-user> -->
+
+<main>
+  <ul id="users">
+    @for(u of users; track u.id){
+      <li>
+        <app-user [user]="u"
+        (select)="onSelect($event)"></app-user>
+      </li>
+     }
+     <!-- <li>
+      <app-user [user]="users[1]" 
+       (select)="onSelect($event)"></app-user>
+    </li>
+     <li>
+      <app-user [user]="users[2]" 
+       (select)="onSelect($event)"></app-user>
+    </li>
+     <li>
+      <app-user [user]="users[3]" 
+       (select)="onSelect($event)"></app-user>
+    </li> -->
+  </ul>
+ <!-- <app-tasks [name]="selectedUser.name"></app-tasks> -->
+  <app-tasks [name]="selectedUser? selectedUser.name : ''"/>
+ <!-- [name] means property binding-->
+</main>
