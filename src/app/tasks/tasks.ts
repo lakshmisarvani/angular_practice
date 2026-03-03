@@ -65,6 +65,7 @@ export class Tasks {
   }
 
   onCompleteTask(id: string){
+    return this.tasksService.removeTask(id);
 
   }
   onStartAddTask(){

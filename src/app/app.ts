@@ -7,14 +7,14 @@ import { Tasks } from './tasks/tasks';
 @Component({
   selector: 'app-root',
   standalone:true,
-  imports: [HeaderComponent,User,Tasks],
+  imports: [HeaderComponent,User,Tasks], //NgFor,NgIf
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('angular-course');
   users=DUMMY_USERS;
-  selectedUserId = 'u1';
+  selectedUserId:string | undefined;
 
   get selectedUser(){
     return this.users.find(user=>user.id===this.selectedUserId)!;
